@@ -45,7 +45,7 @@ const AuctionDetails = () => {
     setBid({ ...bid, loading: true });
     axios
       .post(
-        "http://localhost:4000/movies/bid",
+        "http://localhost:4000/auctions/bid",
         {
           auction_id: id,
           bid: bid.bid,
