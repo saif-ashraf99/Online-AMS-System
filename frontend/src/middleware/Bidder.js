@@ -4,7 +4,7 @@ import { getAuthUser } from "../helper/Storage";
 
 const Bidder = () => {
   const auth = getAuthUser();
-  return <>{auth && auth.role === 'bidder' ? <Outlet /> : <Navigate to={"/"} />}</>;
+  return <>{auth && auth.type === 'bidder' ? <Outlet /> : <Navigate to={"/"} />}</>;
 };
 
 export default Bidder;

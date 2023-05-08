@@ -68,9 +68,6 @@ router.post(
   body("phone")
     .isMobilePhone()
     .withMessage("please enter a valid phone number!"),
-  body("status")
-    .isIn(['active', 'in-active'])
-    .withMessage("status should be either 'active' or 'in-active'"),
   body("type")
     .isIn(['seller', 'bidder'])
     .withMessage("type should be either 'seller' or 'bidder'"),

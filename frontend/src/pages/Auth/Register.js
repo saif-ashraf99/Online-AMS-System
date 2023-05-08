@@ -12,7 +12,7 @@ const Register = () => {
     email: "",
     password: "",
     phone: "",
-    type:"",
+    type: "",
     loading: false,
     err: [],
   });
@@ -43,7 +43,7 @@ const Register = () => {
 
   return (
     <div className="login-container">
-      <h1>Registration</h1>
+      <h1>Registration Form</h1>
 
       {register.err.map((error, index) => (
         <Alert key={index} variant="danger" className="p-2">
@@ -76,28 +76,29 @@ const Register = () => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Control
-            type="tel"
-            placeholder="phone number"
-            value={register.phone}
-            onChange={(e) => setRegister({ ...register, phone: e.target.value })}
-          />
-        </Form.Group>
+    <Form.Control
+      type="tel"
+      placeholder="Phone"
+      value={register.phone}
+      onChange={(e) =>
+        setRegister({ ...register, phone: e.target.value })
+      }
+    />
+  </Form.Group>
 
-        <Form.Group className="mb-3">
-        <Form.Control
-            type="text"
-            value={register.type}
-            onChange={(e) =>
-              setRegister({ ...register, type: e.target.value })
-            }
-          />
-        <Form.Label>Type</Form.Label>
-        <Form.Select disabled>
-          <option>seller</option>
-          <option>bidder</option>
-        </Form.Select>
-      </Form.Group>
+  <Form.Group className="mb-3">
+    <Form.Control
+      as="select"
+      value={register.type}
+      onChange={(e) =>
+        setRegister({ ...register, type: e.target.value })
+      }
+    >
+      <option value="">Select Type</option>
+      <option value="seller">Seller</option>
+      <option value="bidder">Bidder</option>
+    </Form.Control>
+  </Form.Group>
 
         <Button
           className="btn btn-dark w-100"

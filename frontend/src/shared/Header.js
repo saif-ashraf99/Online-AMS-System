@@ -32,7 +32,7 @@ const Header = () => {
             {/* unAuthenticated Route  */}
             {!auth && (
               <>
-                <Link className="nav-link" to={"/login"}>
+                <Link className="nav-link" to={"login"}>
                   Login
                 </Link>
                 <Link className="nav-link" to={"/register"}>
