@@ -50,6 +50,16 @@ const Header = () => {
                 </Link>
               </>
             )}
+
+            {/* Admin Routes  */}
+
+            {auth && auth.type === 'admin' && (
+              <>
+                <Link className="nav-link" to={"/users"}>
+                  Manage Accounts
+                </Link>
+              </>
+            )}
           </Nav>
 
           <Nav className="ms-auto">

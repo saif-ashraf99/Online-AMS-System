@@ -123,7 +123,7 @@ router.delete(
   seller,
   async (req, res) => {
     try {
-      // 1- CHECK IF MOVIE EXISTS OR NOT
+      // 1- CHECK IF AUCTION EXISTS OR NOT
       const query = util.promisify(conn.query).bind(conn);
       const auction = await query("select * from auctions where id = ?", [
         req.params.id,

@@ -12,6 +12,7 @@ app.use(cors()); // ALLOW HTTP REQUESTS LOCAL HOSTS
 // ====================  Required Module ====================
 const auth = require("./routes/Auth");
 const auctions = require("./routes/Auctions");
+const users = require("./routes/Users");
 
 // ====================  RUN THE APP  ====================
 app.listen(4000, "localhost", () => {
@@ -21,3 +22,4 @@ app.listen(4000, "localhost", () => {
 // ====================  API ROUTES [ ENDPOINTS ]  ====================
 app.use("/auth", auth);
 app.use("/auctions", auctions);
+app.use("/users", users);

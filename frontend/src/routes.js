@@ -10,6 +10,7 @@ import UpdateAuction from "./pages/manage-auctions/UpdateAuction";
 import Bidder from "./middleware/Bidder";
 import Seller from "./middleware/Seller";
 import Admin from "./middleware/Admin";
+import ManageAccounts from "./pages/manage-accounts/AccountsDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ export const routes = createBrowserRouter([
           },
         ],
       },
-      
+      // SELLER MIDDLEWARE
       {
         path: "/manage-auctions",
         element: <Seller />,
@@ -63,6 +64,17 @@ export const routes = createBrowserRouter([
           {
             path: ":id",
             element: <UpdateAuction />,
+          },
+        ],
+      },
+      //ADMIN MIDDLEWARE
+      {
+        path: "/users",
+        element: <Admin />,
+        children: [
+          {
+            path: "",
+            element: <ManageAccounts />,
           },
         ],
       },
