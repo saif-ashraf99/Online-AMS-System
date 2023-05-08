@@ -24,18 +24,26 @@ export const routes = createBrowserRouter([
         path: ":id",
         element: <AuctionDetails />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
 
       // BIDDER MIDDLEWARE
       {
         element: <Bidder />,
         children: [
           {
-            path: "/login",
-            element: <Login />,
+            path: "",
+            element: <AuctionDetails />,
           },
           {
-            path: "/register",
-            element: <Register />,
+            path: "/bid",
+            element: <AuctionDetails />,
           },
         ],
       },
