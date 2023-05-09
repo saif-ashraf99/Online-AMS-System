@@ -131,7 +131,7 @@ router.delete(
       if (!auction[0]) {
         res.status(404).json({ ms: "auction not found !" });
       }
-      // 2- REMOVE MOVIE IMAGE
+      // 2- REMOVE AUCTION IMAGE
       fs.unlinkSync("./upload/" + auction[0].image_url); // delete old image
       await query("delete from auctions where id = ?", [auction[0].id]);
       res.status(200).json({
