@@ -11,10 +11,6 @@
       {
         "src": "/api/(.*)",
         "dest": "routes/$1.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "public/$1"
       }
     ]
   }
