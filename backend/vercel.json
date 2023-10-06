@@ -1,0 +1,21 @@
+{
+    "name": "AMS",
+    "version": 2,
+    "builds": [
+      {
+        "src": "./index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "routes/$1.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "public/$1"
+      }
+    ]
+  }
+  
