@@ -5,6 +5,8 @@ import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
 
+const backendUrl = "https://auction-management-system.vercel.app";
+
 const Home = () => {
   const [auctions, setAuctions] = useState({
     loading: true,
@@ -18,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     setAuctions({ ...auctions, loading: true });
     axios
-      .get("http://localhost:4000/auctions", {
+      .get("${backendUrl}/auctions", {
         params: {
           search: search,
         },

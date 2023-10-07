@@ -6,6 +6,8 @@ import { getAuthUser } from "../../helper/Storage";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+const backendUrl = "https://auction-management-system.vercel.app";
+
 const UpdateAuction = () => {
   let { id } = useParams();
   const auth = getAuthUser();
@@ -32,7 +34,7 @@ const UpdateAuction = () => {
       formData.append("image", image.current.files[0]);
     }
     axios
-      .put("http://localhost:4000/auctions/" + id, formData, {
+      .put("${backendUrl}/auctions/" + id, formData, {
         headers: {
           token: auth.token,
           "Content-Type": "multipart/form-data",
@@ -58,7 +60,7 @@ const UpdateAuction = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/auctions/" + id)
+      .get("${backendUrl}/auctions/" + id)
       .then((resp) => {
         setAuction({
           ...auction,

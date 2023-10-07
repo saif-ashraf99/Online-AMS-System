@@ -7,6 +7,8 @@ import axios from "axios";
 import { setAuthUser } from "../../helper/Storage";
 import { useNavigate } from "react-router-dom";
 
+const backendUrl = "https://auction-management-system.vercel.app";
+
 const Login = () => {
   const navigate = useNavigate();
   const [login, setLogin] = useState({
@@ -20,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     setLogin({ ...login, loading: true, err: [] });
     axios
-      .post("http://localhost:4000/auth/login", {
+      .post("${backendUrl}/auth/login", {
         email: login.email,
         password: login.password,
       })

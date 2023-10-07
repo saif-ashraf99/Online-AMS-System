@@ -5,6 +5,8 @@ import Alert from "react-bootstrap/Alert";
 import { getAuthUser } from "../../helper/Storage";
 import axios from "axios";
 
+const backendUrl = "https://auction-management-system.vercel.app";
+
 const AddAuction = () => {
   const auth = getAuthUser();
   const [auction, setAuction] = useState({
@@ -29,7 +31,7 @@ const AddAuction = () => {
       formData.append("image", image.current.files[0]);
     }
     axios
-      .post("http://localhost:4000/auctions", formData, {
+      .post("${backendUrl}/auctions", formData, {
         headers: {
           token: auth.token,
           "Content-Type": "multipart/form-data",

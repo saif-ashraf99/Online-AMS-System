@@ -8,6 +8,8 @@ import Alert from "react-bootstrap/Alert";
 import { getAuthUser } from "../../helper/Storage";
 import Form from "react-bootstrap/Form";
 
+const backendUrl = "https://auction-management-system.vercel.app";
+
 const AuctionDetails = () => {
   let { id } = useParams();
   const auth = getAuthUser();
@@ -27,7 +29,7 @@ const AuctionDetails = () => {
   useEffect(() => {
     setAuction({ ...auction, loading: true });
     axios
-      .get("http://localhost:4000/auctions/" + id)
+      .get("${backendUrl}/auctions/" + id)
       .then((resp) => {
         setAuction({ ...auction, result: resp.data, loading: false, err: null });
       })
@@ -45,7 +47,7 @@ const AuctionDetails = () => {
     setBid({ ...bid, loading: true });
     axios
       .post(
-        "http://localhost:4000/auctions/bid",
+        "${backendUrl}/auctions/bid",
         {
           auction_id: id,
           bid: bid.bid,

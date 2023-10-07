@@ -6,6 +6,8 @@ import Alert from "react-bootstrap/Alert";
 import axios from "axios";
 import { getAuthUser } from "../../helper/Storage";
 
+const backendUrl = "https://auction-management-system.vercel.app";
+
 const ManageAuctions = () => {
   const auth = getAuthUser();
   const [auctions, setAuctions] = useState({
@@ -18,7 +20,7 @@ const ManageAuctions = () => {
   useEffect(() => {
     setAuctions({ ...auctions, loading: true });
     axios
-      .get("http://localhost:4000/auctions")
+      .get("${backendUrl}/auctions")
       .then((resp) => {
         setAuctions({ ...auctions, results: resp.data, loading: false, err: null });
       })
@@ -33,7 +35,7 @@ const ManageAuctions = () => {
 
   const deleteAuction = (id) => {
     axios
-      .delete("http://localhost:4000/auctions/" + id, {
+      .delete("${backendUrl}/auctions/" + id, {
         headers: {
           token: auth.token,
         },

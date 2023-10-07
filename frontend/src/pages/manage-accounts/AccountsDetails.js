@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { getAuthUser } from "../../helper/Storage";
 
+const backendUrl = "https://auction-management-system.vercel.app";
+
 const ManageAccounts = () => {
   const auth = getAuthUser();
   const [users, setUsers] = useState({
@@ -17,7 +19,7 @@ const ManageAccounts = () => {
   useEffect(() => {
     setUsers({ ...users, loading: true });
     axios
-      .get("http://localhost:4000/users")
+      .get("${backendUrl}/users")
       .then((resp) => {
         setUsers({ ...users, results: resp.data, loading: false, err: null });
       })
@@ -32,7 +34,7 @@ const ManageAccounts = () => {
 
   const deleteUser = (id) => {
     axios
-      .delete("http://localhost:4000/users/" + id, {
+      .delete("${backendUrl}/users/" + id, {
         headers: {
           token: auth.token,
         },
