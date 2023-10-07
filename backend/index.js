@@ -15,7 +15,7 @@ const auctions = require("./routes/Auctions");
 const users = require("./routes/Users");
 
 // ====================  RUN THE APP  ====================
-app.listen(4000, "localhost", () => {
+app.listen(4000||process.env.PORT, "localhost", () => {
   console.log("SERVER IS RUNNING ");
 });
 
