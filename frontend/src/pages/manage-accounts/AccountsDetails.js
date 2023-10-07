@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { getAuthUser } from "../../helper/Storage";
 
-const backendUrl = "https://auction-management-system.vercel.app";
+const backendUrl = "https://ams-server.vercel.app";
 
 const ManageAccounts = () => {
   const auth = getAuthUser();

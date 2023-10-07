@@ -5,7 +5,7 @@ import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
 
-const backendUrl = "https://auction-management-system.vercel.app";
+const backendUrl = "https://ams-server.vercel.app";
 
 const Home = () => {
   const [auctions, setAuctions] = useState({

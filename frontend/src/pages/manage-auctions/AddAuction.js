@@ -5,7 +5,7 @@ import Alert from "react-bootstrap/Alert";
 import { getAuthUser } from "../../helper/Storage";
 import axios from "axios";
 
-const backendUrl = "https://auction-management-system.vercel.app";
+const backendUrl = "https://ams-server.vercel.app";
 
 const AddAuction = () => {
   const auth = getAuthUser();

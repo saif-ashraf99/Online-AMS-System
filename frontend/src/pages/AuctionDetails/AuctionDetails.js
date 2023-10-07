@@ -8,7 +8,7 @@ import Alert from "react-bootstrap/Alert";
 import { getAuthUser } from "../../helper/Storage";
 import Form from "react-bootstrap/Form";
 
-const backendUrl = "https://auction-management-system.vercel.app";
+const backendUrl = "https://ams-server.vercel.app";
 
 const AuctionDetails = () => {
   let { id } = useParams();

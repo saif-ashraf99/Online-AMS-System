@@ -6,7 +6,7 @@ import axios from "axios";
 import { setAuthUser } from "../../helper/Storage";
 import { useNavigate } from "react-router-dom";
 
-const backendUrl = "https://auction-management-system.vercel.app";
+const backendUrl = "https://ams-server.vercel.app";
 
 const Register = () => {
   const navigate = useNavigate();

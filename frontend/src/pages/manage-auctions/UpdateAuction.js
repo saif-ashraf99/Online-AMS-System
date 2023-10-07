@@ -6,7 +6,7 @@ import { getAuthUser } from "../../helper/Storage";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const backendUrl = "https://auction-management-system.vercel.app";
+const backendUrl = "https://ams-server.vercel.app";
 
 const UpdateAuction = () => {
   let { id } = useParams();
