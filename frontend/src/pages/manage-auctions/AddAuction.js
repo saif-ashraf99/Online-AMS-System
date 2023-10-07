@@ -31,7 +31,7 @@ const AddAuction = () => {
       formData.append("image", image.current.files[0]);
     }
     axios
-      .post("${backendUrl}/auctions", formData, {
+      .post(backendUrl +"/auctions", formData, {
         headers: {
           token: auth.token,
           "Content-Type": "multipart/form-data",

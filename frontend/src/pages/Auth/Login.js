@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     setLogin({ ...login, loading: true, err: [] });
     axios
-      .post("${backendUrl}/auth/login", {
+      .post(backendUrl +"/auth/login", {
         email: login.email,
         password: login.password,
       })

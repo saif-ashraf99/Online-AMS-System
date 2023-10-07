@@ -19,7 +19,7 @@ const ManageAccounts = () => {
   useEffect(() => {
     setUsers({ ...users, loading: true });
     axios
-      .get("${backendUrl}/users")
+      .get(backendUrl +"/users")
       .then((resp) => {
         setUsers({ ...users, results: resp.data, loading: false, err: null });
       })
@@ -34,7 +34,7 @@ const ManageAccounts = () => {
 
   const deleteUser = (id) => {
     axios
-      .delete("${backendUrl}/users/" + id, {
+      .delete(backendUrl +"/users/" + id, {
         headers: {
           token: auth.token,
         },

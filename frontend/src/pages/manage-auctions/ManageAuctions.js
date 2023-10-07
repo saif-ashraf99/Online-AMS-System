@@ -20,7 +20,7 @@ const ManageAuctions = () => {
   useEffect(() => {
     setAuctions({ ...auctions, loading: true });
     axios
-      .get("${backendUrl}/auctions")
+      .get(backendUrl +"/auctions")
       .then((resp) => {
         setAuctions({ ...auctions, results: resp.data, loading: false, err: null });
       })
@@ -35,7 +35,7 @@ const ManageAuctions = () => {
 
   const deleteAuction = (id) => {
     axios
-      .delete("${backendUrl}/auctions/" + id, {
+      .delete(backendUrl +"/auctions/" + id, {
         headers: {
           token: auth.token,
         },

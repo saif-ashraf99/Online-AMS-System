@@ -29,7 +29,7 @@ const AuctionDetails = () => {
   useEffect(() => {
     setAuction({ ...auction, loading: true });
     axios
-      .get("${backendUrl}/auctions/" + id)
+      .get(backendUrl +"/auctions/" + id)
       .then((resp) => {
         setAuction({ ...auction, result: resp.data, loading: false, err: null });
       })

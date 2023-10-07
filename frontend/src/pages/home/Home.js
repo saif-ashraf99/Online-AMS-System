@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     setAuctions({ ...auctions, loading: true });
     axios
-      .get("${backendUrl}/auctions", {
+      .get(backendUrl +"/auctions", {
         params: {
           search: search,
         },

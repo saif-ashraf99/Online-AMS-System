@@ -23,7 +23,7 @@ const Register = () => {
     e.preventDefault();
     setRegister({ ...register, loading: true, err: [] });
     axios
-      .post("${backendUrl}/auth/register", {
+      .post(backendUrl +"/auth/register", {
         email: register.email,
         password: register.password,
         phone: register.phone,
